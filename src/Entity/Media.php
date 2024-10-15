@@ -85,14 +85,14 @@ class Media
         return $this;
     }
 
-    public function isAime�e(): ?bool
+    public function isAime(): ?bool
     {
-        return $this->aime�e;
+        return $this->aime;
     }
 
-    public function setAime�e(bool $aime�e): static
+    public function setAime(bool $aime): static
     {
-        $this->aime�e = $aime�e;
+        $this->aime = $aime;
 
         return $this;
     }
