@@ -32,6 +32,10 @@ class Media
     #[ORM\Column]
     private ?bool $consomme = null;
 
+    #[ORM\OneToOne(inversedBy: 'media', cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?MediaType $type = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +109,18 @@ class Media
     public function setConsomme(bool $consomme): static
     {
         $this->consomme = $consomme;
+
+        return $this;
+    }
+
+    public function getType(): ?MediaType
+    {
+        return $this->type;
+    }
+
+    public function setType(MediaType $type): static
+    {
+        $this->type = $type;
 
         return $this;
     }
